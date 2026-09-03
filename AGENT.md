@@ -62,24 +62,25 @@ GoldenTellus 的已确认差异化观点是：FDE 不应被默认要求成为全
 - 公共文档优先沉淀在 GitHub；微信公众号、社群、抖音、小红书、X、B 站和 YouTube 作为分发、连接或视频渠道，具体开通节奏待用户确认。
 - 仓库、Issue、Pull Request、Discussion 和项目看板建议使用统一命名、标签和状态，便于后续自动化。
 
-## 6. 建议的仓库模块（待确认，不代表已创建）
+## 6. 当前仓库结构
 
-以下是附件中形成的候选 Organization 架构。创建或改名之前，先检查 `GoldenTellus` 现有资源并向用户确认需要落地的范围。
+以下是 GoldenTellus 当前采用的 Organization 架构。涉及创建、改名、归档或删除仓库时，先检查现有资源并取得用户确认。
 
-| 候选仓库 | 用途 |
+| 仓库 | 用途 |
 |---|---|
 | `goldentellus-home` | Organization 门面、导航和新人入口 |
-| `goldentellus-knowledge` | 按 FDE 流水线角色组织的知识体系 |
+| `goldentellus-knowledge` | 工位定位、学习路径、技能矩阵和按 FDE 流水线角色组织的知识体系 |
 | `goldentellus-cases` | 脱敏案例拆解、索引和案例模板 |
-| `goldentellus-demos` | 与案例对应的可运行开源 Demo |
+| `goldentellus-labs` | Skills、工具、连接器、共用组件和与案例对应的可运行 Demo |
 | `goldentellus-playbooks` | 角色 SOP、交接协议和交付模板 |
-| `goldentellus-toolkit` | 需求分析、架构、数据和报告等共用工具 |
-| `goldentellus-roadmap` | 找到工位、学习路径和技能矩阵 |
 | `goldentellus-community` | 社群治理、贡献者、组队和活动记录 |
 | `awesome-fde` | FDE、企业 AI 和相关工具资源聚合 |
 | `goldentellus-reports` | 行业研究、白皮书和企业侧材料 |
+| `goldentellus-enterprise` | 企业 AI 应用落地的决策入口与跨仓库导航 |
+| `goldentellus-neuron` | ANC、Neuron、Neuron Network 的核心理论、规范和参考实现 |
+| `.github` | Organization Profile、公共贡献约定和跨仓库自动化 |
 
-冷启动优先考虑最小闭环：门面 / 导航、案例库、Demo 库；再逐步增加知识体系、学习路径、SOP 和社群治理。具体仓库名称、数量、可见性和创建顺序均为待确认项。
+已归档的 `goldentellus-roadmap` 与 `goldentellus-toolkit` 只保留迁移说明和历史链接；不再作为内容目标。
 
 ## 7. 内容与案例标准（当前建议）
 
@@ -135,7 +136,7 @@ Codex 是 GoldenTellus 的仓库管理 Agent。对案例与理论内容，负责
 1. 接收并检查业务背景、技术方案、实施过程、结果数据四类素材；至少具备三类后才进入拆解。其余信息以 `[待补充]` 标注，完全不涉及的阶段标为 `[不适用]`。
 2. 检查公司名、人名、联系方式、账号、订单号、截图、日志、原始数据与密钥。发现敏感信息时，先由用户确认替换方案；他人案例必须确认授权，自有案例必须确认公开范围。
 3. 按诊断、架构、开发、数据、集成、运营六段拆解。每段都要说明关键决策与原因，并区分事实、客户提供数据、估算和推断。
-4. 案例正文唯一存放在 `goldentellus-cases/by-industry/<industry>/`；阶段与难度目录仅维护索引链接，避免正文重复。案例始终写入 `goldentellus-cases`；满足条件时可同时写入 `demos`、`playbooks`、`toolkit`、`awesome-fde` 或 `reports`。
+4. 案例正文唯一存放在 `goldentellus-cases/by-industry/<industry>/`；阶段与难度目录仅维护索引链接，避免正文重复。案例始终写入 `goldentellus-cases`；满足条件时可同时写入 `goldentellus-labs`、`playbooks`、`awesome-fde` 或 `reports`。
 5. 只有技术方案足够具体且用户允许生成时，才能创建标注“演示用途”的最小 Demo。Demo 使用模拟或已授权脱敏数据，不得把推导出的实现说成客户原始代码或生产结果。
 6. 单一案例不能直接作为行业趋势结论；写入 `reports` 前必须有用户确认的多来源证据和来源说明。外部资源进入 `awesome-fde` 前必须检查 URL、许可证、维护状态与重复项。
 7. 案例发布后，主动建议可提炼的理论方向；仅在用户确认后进入理论链路。
@@ -144,7 +145,7 @@ Codex 是 GoldenTellus 的仓库管理 Agent。对案例与理论内容，负责
 
 1. 通过对话提炼一句话观点、论据、推理、适用场景、不适用场景、前提条件、反例和实践映射。多个独立观点拆成独立条目。
 2. 每个结论显式区分“事实”“推断”“观点”。只将用户确认的内容作为公开主张；不确定内容标为 `[待补充]`，不将对话经验包装成行业事实。
-3. 路由规则：学习顺序或能力模型进入 `goldentellus-roadmap`；方法论与角色知识进入 `goldentellus-knowledge`；经核实的外部资源进入 `awesome-fde`；具备多来源依据的行业判断进入 `goldentellus-reports`。
+3. 路由规则：工位定位、学习顺序、能力模型、方法论与角色知识进入 `goldentellus-knowledge`；经核实的外部资源进入 `awesome-fde`；具备多来源依据的行业判断进入 `goldentellus-reports`。
 4. 角色文章按现有目录写入：`01-lead-fde`、`02-analyst`、`03-architect`、`04-builder`、`05-data-engineer`、`06-integrator`、`07-ops`；全员通识写入 `00-pipeline-fundamentals`，跨角色文章写入 `99-general`。
 5. 发布前扫描同目录与关联目录中的标题、ID 和关键词。重复内容优先追加或更新已有文章；新建文章时从仓库现有 ID 扫描出下一个可用编号，不另建编号日志。
 
