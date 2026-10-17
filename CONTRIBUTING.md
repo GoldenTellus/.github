@@ -1,6 +1,6 @@
 # GoldenTellus 贡献约定
 
-GoldenTellus 的内容生产遵循“先确认，后发布”的原则。案例、Demo、知识文章、SOP 和资源条目须先阅读目标仓库的 README、模板与贡献说明。
+GoldenTellus 的内容生产遵循“先确认，后发布”的原则。知识文章和案例目前统一放在 [goldentellus-home](https://github.com/GoldenTellus/goldentellus-home) 的 `docs/` 下；社群协作在 [goldentellus-community](https://github.com/GoldenTellus/goldentellus-community)。提交前请先阅读目标仓库的 README、模板与贡献说明。
 
 ## 内容边界
 
@@ -9,10 +9,10 @@ GoldenTellus 的内容生产遵循“先确认，后发布”的原则。案例�
 - 知识文章应区分事实、推断与观点，并写明适用边界和相关来源。
 - 外部资源须验证链接、许可证、维护状态和重复项后再收录。
 
-## Codex 管理流程
+## Agent 管理流程
 
-使用案例、理论和关联指令时，遵循 [Codex 内容生产指令速查](https://github.com/GoldenTellus/goldentellus-playbooks/blob/main/sops/codex-command-reference.md)。获得发布确认后，内容会按目标仓库分别直接提交到 `main`，不经过 Pull Request。
+案例、理论和关联指令（`/case-new`、`/theory-new` 等）的完整规则见 [AGENT.md](./AGENT.md) 第 4 节。获得发布确认后，内容直接提交到 `goldentellus-home` 的 `main`，不经过 Pull Request。
 
 ## 提交信息
 
-提交信息使用 Conventional Commits。各类内容的仓库级格式见 [指令速查中的提交规范](https://github.com/GoldenTellus/goldentellus-playbooks/blob/main/sops/codex-command-reference.md#提交信息)。
+提交信息使用 [Conventional Commits](https://www.conventionalcommits.org/)：`feat:` 新内容、`fix:` 修正、`docs:` 文档与说明、`chore:` 维护。案例和知识文章建议写明 ID，例如 `feat(cases): add retail-001 inventory forecasting`。
